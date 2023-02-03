@@ -15,10 +15,11 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+        <script defer src="{{url_for('static', filename='js/animation.js')}}"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top nav-hid hidden" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top">
                 <span class="d-block d-lg-none">Antonio Martins</span>
                 <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="..." /></span>
@@ -27,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills/Projetos</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">Experiência</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">Educação</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interesses</a></li>
@@ -39,44 +40,42 @@
             <!-- About-->
             <section class="resume-section" id="about">
                 <div class="resume-section-content">
-                    <h1 class="mb-0">
+                    <h1 class="mb-0 sobremim hidden">
                         Antonio
                         <span class="text-primary">Martins</span>
                     </h1>
-                    <div class="subheading mb-5">
+                    <div class="subheading mb-5 sobremim hidden">
                         Uberlândia, MG · (34) 9 8427-8372 ·
                         <a href="mailto:poeticum.visum@gmail.com">poeticum.visum@gmail.com</a>
                     </div>
-                    <p class="lead mb-5">Um tech-head sempre buscando aprender mais sobre tecnologia para assim poder aprender ainda mais sobre tecnologia.
+                    <p class="lead mb-5 oneliner sobremim hidden">Um tech-head sempre buscando aprender mais sobre tecnologia para assim poder aprender ainda mais sobre tecnologia.
                     <br>
                     </p>
                     <div class="social-icons">
-                        <a class="social-icon" href="https://www.linkedin.com/in/amartinsneto/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="https://github.com/Atheeleon"><i class="fab fa-github"></i></a>
+                        <a class="social-icon hidden" href="https://www.linkedin.com/in/amartinsneto/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon hidden" href="https://github.com/Atheeleon"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
             <!-- Skills-->
             <section class="resume-section" id="skills">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Skills</h2>
                     <ul class="list-inline dev-icons">
-                        <li class="list-inline-item"><i class="devicon-html5-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-css3-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-javascript-plain"></i></li>
-                        <li class="list-inline-item"><i class="devicon-python-plain-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-flask-original-wordmark"></i></li>
-                        <li class="list-inline-item"><i class="devicon-mysql-plain-wordmark"></i></li>
+                        <li class="list-inline-item skills hidden"><i class="devicon-html5-plain-wordmark"></i></li>
+                        <li class="list-inline-item skills hidden"><i class="devicon-css3-plain-wordmark"></i></li>
+                        <li class="list-inline-item skills hidden"><i class="devicon-javascript-plain"></i></li>
+                        <li class="list-inline-item skills hidden"><i class="devicon-python-plain-wordmark"></i></li>
+                        <li class="list-inline-item skills hidden"><i class="devicon-flask-original-wordmark"></i></li>
+                        <li class="list-inline-item skills hidden"><i class="devicon-mysql-plain-wordmark"></i></li>
                     </ul>
                 </div>
             </section>
-            <hr class="m-0" />
             <!-- Experience-->
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Experiência</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 atual hidden">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">BI Analytics</h3>
                             <div class="subheading mb-3">SIMTech - Martins Comércio e Serviço de Distribuição S.A</div>
@@ -86,7 +85,7 @@
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">{{ tempo }}</span></div>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 penultimo hidden">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Suporte Tecnico</h3>
                             <div class="subheading mb-3">SIMTech - Martins Comércio e Serviço de Distribuição S.A</div>
@@ -94,7 +93,7 @@
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">3 meses</span></div>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 ultimo hidden">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Suporte Tecnico</h3>
                             <div class="subheading mb-3">Grupo Ativa Soluções</div>
@@ -108,19 +107,18 @@
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
             <!-- Education-->
             <section class="resume-section" id="education">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Educação</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 puc hidden">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">PUC Minas - Campus Uberlândia</h3>
                             <div class="subheading mb-3">Bacharelado, Sistemas de Informação</div>
                         </div>
                         <div class="flex-shrink-0"><span class="text-primary">Agosto de 2019 - Junho de 2023</span></div>
                     </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                    <div class="d-flex flex-column flex-md-row justify-content-between iftm hidden">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">Instituto Federal do Triângulo Mineiro - Campus Uberlândia Centro</h3>
                             <div class="subheading mb-3">Técnico em Redes de Computadores</div>
@@ -129,18 +127,16 @@
                     </div>
                 </div>
             </section>
-            <hr class="m-0" />
             <!-- Interests-->
             <section class="resume-section" id="interests">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Interesses</h2>
-                    <p>Apesar da área de dados e desenvolvimento, também tenho uma bagagem no ramo mais cultural. Músico por hobby e uma paixão gigantesca por cinema.
+                    <p class="interesse hidden">Apesar da área de dados e desenvolvimento, também tenho uma bagagem no ramo mais cultural. Músico por hobby e uma paixão gigantesca por cinema.
                         <br>
                         Quando realmente gosto de algo, eu entro de cabeça e estudo até me cansar.</p>
-                    <p class="mb-0">"A firmes passos, sempre constante. Nunca me deixe parar..."</p>
+                    <p class="mb-0 interesse hidden">"A firmes passos, sempre constante. Nunca me deixe parar..."</p>
                 </div>
             </section>
-            <hr class="m-0" />
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
